@@ -33,7 +33,7 @@ class Attractions(ViewSet):
         """
         new_attraction = Attraction()
         new_attraction.name = request.data["name"]
-
+# MAKE SURE YOU ARE ASSIGNING THE AREA OBJECT TO THE new_attraction.area property instead of just they FK value
         area = ParkArea.objects.get(pk=request.data["area_id"])
         new_attraction.area = area
         new_attraction.save()
